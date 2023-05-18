@@ -9,6 +9,7 @@ function App() {
     <div>
       <Header />
       <Navigation />
+      console.console.log(hh);
     </div>
   );
 }
