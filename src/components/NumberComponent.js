@@ -25,7 +25,7 @@ class NumberComponent extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.myNumber >= 5 && this.state.myNumber < 5) {
       // Call a callback function passed as a prop to handle filtering
-      this.props.onLikesDecrease();
+      this.props.onLikesChange();
     }
   }
 
