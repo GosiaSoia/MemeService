@@ -27,20 +27,23 @@ const RegularMemes = () => {
 
   return (
     <div>
-      <h2>Regular Memes</h2>
       <ul className="memes-container">
         {regularMemes.map((meme) => (
           <li key={meme.title}>
-            <img src={meme.img} alt={meme.title} />
-            <h2>{meme.title}</h2>
-            <p>
-              <NumberComponent
-                likes={meme.likes}
-                onLikesChange={(newLikes) =>
-                  handleLikesChange(meme.title, newLikes)
-                }
-              />
-            </p>
+            {/* add className to li to adjust the memes? */}
+            <div className="meme-box">
+              <h2>{meme.title}</h2>
+              <img src={meme.img} alt={meme.title} />
+
+              <p>
+                <NumberComponent
+                  likes={meme.likes}
+                  onLikesChange={(newLikes) =>
+                    handleLikesChange(meme.title, newLikes)
+                  }
+                />
+              </p>
+            </div>
           </li>
         ))}
       </ul>

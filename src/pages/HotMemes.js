@@ -27,20 +27,22 @@ const HotMemes = () => {
 
   return (
     <div>
-      <h2>Hot Memes</h2>
       <ul className="memes-container">
         {hotMemes.map((meme) => (
           <li key={meme.title}>
-            <img src={meme.img} alt={meme.title} />
-            <h2>{meme.title}</h2>
-            <p>
-              <NumberComponent
-                likes={meme.likes}
-                onLikesChange={(newLikes) =>
-                  handleLikesChange(meme.title, newLikes)
-                }
-              />
-            </p>
+            <div className="meme-box">
+              <h2>{meme.title}</h2>
+              <img src={meme.img} alt={meme.title} />
+
+              <p>
+                <NumberComponent
+                  likes={meme.likes}
+                  onLikesChange={(newLikes) =>
+                    handleLikesChange(meme.title, newLikes)
+                  }
+                />
+              </p>
+            </div>
           </li>
         ))}
       </ul>
