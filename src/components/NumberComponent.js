@@ -28,13 +28,6 @@ class NumberComponent extends React.Component {
     }));
   };
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevState.myNumber >= 5 && this.state.myNumber < 5) {
-  //     //  passed as a prop to handle filtering
-  //     this.props.onLikesChange();
-  //   }
-  // }
-
   render() {
     const starImage = this.state.isFavourite ? "/star.png" : "/emptystar.png";
 
