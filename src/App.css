@@ -79,7 +79,7 @@ body {
 }
 
 .memes-container img {
-  width: 70%;
+  width: 90%;
   height: auto;
   border-radius: 5px;
 }
@@ -95,9 +95,10 @@ body {
   align-items: center;
 }
 
-.main {
+/* .main {
   margin-top: 40px;
-}
+  display: flex;
+} */
 
 /* like & dislike button */
 
@@ -114,4 +115,24 @@ body {
   transition: 0.3s;
   margin-right: 10px;
   width: 110px;
+}
+
+.btn:hover {
+  background-color: #787676;
+}
+
+.btn-star {
+  border: none;
+  background-color: #858585;
+  padding: 10px 10px;
+  border-radius: 100px;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 10px;
+  width: 50px;
+}
+
+.btn-star:hover {
+  background-color: #9d9b9b;
 }

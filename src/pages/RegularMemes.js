@@ -30,7 +30,6 @@ const RegularMemes = () => {
       <ul className="memes-container">
         {regularMemes.map((meme) => (
           <li key={meme.title}>
-            {/* add className to li to adjust the memes? */}
             <div className="meme-box">
               <h2>{meme.title}</h2>
               <img src={meme.img} alt={meme.title} />

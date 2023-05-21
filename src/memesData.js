@@ -1,48 +1,57 @@
 const memesData = [
   {
-    title: "Meme 1",
+    title: "Amazon seat",
     likes: 2,
     img: "/memes/pic1.jpg",
+    isFavourite: false,
   },
   {
-    title: "Meme 2",
+    title: "British Museum",
     likes: 3,
     img: "/memes/pic2.jpg",
+    isFavourite: false,
   },
   {
-    title: "Meme 3",
+    title: "Ikea wine",
     likes: 0,
     img: "/memes/pic3.jpg",
+    isFavourite: false,
   },
   {
-    title: "Meme 4",
+    title: "Work experience",
     likes: 9,
     img: "/memes/pic4.jpg",
+    isFavourite: false,
   },
   {
-    title: "Meme 5",
+    title: "Card games",
     likes: 9,
     img: "/memes/pic6.jpg",
+    isFavourite: false,
   },
   {
-    title: "Meme 6",
+    title: "36m/old baby",
     likes: 6,
     img: "/memes/pic5.jpg",
+    isFavourite: false,
   },
   {
-    title: "Meme 7",
+    title: "Yummy toys",
     likes: 8,
     img: "/memes/pic7.jpg",
+    isFavourite: false,
   },
   {
-    title: "Meme 8",
+    title: "Popcorn time",
     likes: 0,
     img: "/memes/pic8.jpg",
+    isFavourite: false,
   },
   {
-    title: "Meme 9",
+    title: "Jewish roommate",
     likes: 9,
     img: "/memes/pic9.jpg",
+    isFavourite: false,
   },
 ];
 
