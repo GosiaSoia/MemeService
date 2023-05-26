@@ -1,6 +1,6 @@
 import React from "react";
-import memesData from "../memesData.js";
-// import "../styles/Generator.css";
+import genData from "../generatorData";
+import "../Generator.css";
 
 function Generator() {
   const [meme, setMeme] = React.useState({
@@ -8,7 +8,8 @@ function Generator() {
     bottomText: "",
     randomImage: "https://i.imgflip.com/4acd7j.png",
   });
-  const [allMemes] = React.useState(memesData);
+
+  const [allMemes] = React.useState(genData);
 
   function getMemeImage() {
     const memesArray = allMemes.data.memes;
@@ -29,13 +30,11 @@ function Generator() {
   }
   return (
     <main>
-      <header className="header">
-        <h1 className="header--project">STWÓRZ WŁASNEGO SUPERMEMA!</h1>
-      </header>
+      <header className="header"></header>
       <div className="form">
         <input
           type="text"
-          placeholder="tekst górny"
+          placeholder="Top text"
           className="form--input"
           name="topText"
           value={meme.topText}
@@ -43,14 +42,14 @@ function Generator() {
         />
         <input
           type="text"
-          placeholder="tekst dolny"
+          placeholder="Bottom text"
           className="form--input"
           name="bottomText"
           value={meme.bottomText}
           onChange={handleChange}
         />
         <button className="form--button" onClick={getMemeImage}>
-          Wybierz zdjęcie do stworzenia SuperMema
+          Choose your meme image
         </button>
       </div>
       <div className="meme">
