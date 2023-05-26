@@ -25,7 +25,7 @@ body {
   width: 300px;
   position: fixed;
   top: 200px;
-  bottom: 550px;
+  /* bottom: 550px; */
   display: flex;
   justify-content: space-around;
   align-items: center;
