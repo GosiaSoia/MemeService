@@ -39,6 +39,11 @@ function App() {
                   MEME GENERATOR
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/favourite" activeClassName="active">
+                  FAVOURITE MEMES
+                </NavLink>
+              </li>
             </ul>
           </aside>
           <section>
@@ -52,6 +57,7 @@ function App() {
                 element={<RegularMemes memes={memes} setMemes={setMemes} />}
               />
               <Route path="/generator" element={<GeneratorMeme />} />
+              <Route path="/favourite" element={<GeneratorMeme />} />
             </Routes>
           </section>
         </div>

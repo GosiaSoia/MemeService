@@ -1,6 +1,6 @@
 import React from "react";
 import genData from "../generatorData";
-import "../Generator.css";
+import "../App.css";
 
 function Generator() {
   const [meme, setMeme] = React.useState({
@@ -32,6 +32,7 @@ function Generator() {
     <main>
       <header className="header"></header>
       <div className="form">
+        <h1>A React App page to make all your MEMES come true</h1>
         <input
           type="text"
           placeholder="Top text"
@@ -49,7 +50,7 @@ function Generator() {
           onChange={handleChange}
         />
         <button className="form--button" onClick={getMemeImage}>
-          Choose your meme image
+          Choose your random meme image
         </button>
       </div>
       <div className="meme">
