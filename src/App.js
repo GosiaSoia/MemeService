@@ -1,5 +1,4 @@
 import "./App.css";
-
 import Header from "./components/Header";
 import { useState } from "react";
 import {
@@ -8,20 +7,20 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
-
 import memesData from "./memesData";
 import GeneratorMeme from "./pages/GeneratorMeme";
-
 import Memes from "./components/Memes";
 
 function App() {
   const [memes, setMemes] = useState(memesData);
 
-  const handleFavoriteToggle = (memeId) => {
-    const memeIndexToUpdate = memes.findIndex((meme) => meme.id === memeId);
-    const updatedMemes = [...memes];
-    updatedMemes[memeIndexToUpdate].favourite =
-      !updatedMemes[memeIndexToUpdate].favourite;
+  const handleFavoriteToggle = (memeId, isFavourite) => {
+    const updatedMemes = memes.map((meme) => {
+      if (meme.id === memeId) {
+        return { ...meme, favourite: isFavourite };
+      }
+      return meme;
+    });
 
     setMemes(updatedMemes);
   };

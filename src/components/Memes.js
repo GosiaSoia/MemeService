@@ -21,14 +21,12 @@ const Memes = ({ memes, setMemes, isHot, isFavourite }) => {
 
   let filteredMemes = [...memes];
 
-  if (isHot) {
+  if (isFavourite) {
+    filteredMemes = filteredMemes.filter((meme) => meme.favourite);
+  } else if (isHot) {
     filteredMemes = filteredMemes.filter((meme) => meme.likes > 5);
   } else {
     filteredMemes = filteredMemes.filter((meme) => meme.likes <= 5);
-  }
-
-  if (isFavourite) {
-    filteredMemes = filteredMemes.filter((meme) => meme.favourite);
   }
 
   return (
@@ -48,7 +46,7 @@ const Memes = ({ memes, setMemes, isHot, isFavourite }) => {
                     handleLikesChange(meme.id, newLikes)
                   }
                   onFavoriteToggle={() => handleFavoriteToggle(meme.id)}
-                  memeId={meme.id} // Pass memeId prop
+                  memeId={meme.id}
                 />
               </p>
             </div>

@@ -8,7 +8,7 @@ const memesData = [
   },
   {
     title: "British Museum",
-    likes: 3,
+    likes: 5,
     img: "/memes/pic2.jpg",
     favourite: false,
     id: 2,

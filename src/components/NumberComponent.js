@@ -29,7 +29,7 @@ class NumberComponent extends React.Component {
         isFavourite: !prevState.isFavourite,
       }),
       () => {
-        this.props.onFavoriteToggle(this.state.isFavourite);
+        this.props.onFavoriteToggle(this.props.memeId);
       }
     );
   };
