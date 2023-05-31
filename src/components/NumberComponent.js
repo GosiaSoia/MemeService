@@ -24,9 +24,14 @@ class NumberComponent extends React.Component {
   };
 
   starClick = () => {
-    this.setState((prevState) => ({
-      isFavourite: !prevState.isFavourite,
-    }));
+    this.setState(
+      (prevState) => ({
+        isFavourite: !prevState.isFavourite,
+      }),
+      () => {
+        this.props.onFavoriteToggle(this.state.isFavourite);
+      }
+    );
   };
 
   render() {

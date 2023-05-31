@@ -1,7 +1,7 @@
 import React from "react";
 import NumberComponent from "../components/NumberComponent";
 
-const Memes = ({ memes, setMemes, isHot }) => {
+const Memes = ({ memes, setMemes, isHot, isFavourite }) => {
   const handleLikesChange = (memeId, newLikes) => {
     const memeIndexToUpdate = memes.findIndex((meme) => meme.id === memeId);
     const updatedMemes = [...memes];
@@ -10,9 +10,26 @@ const Memes = ({ memes, setMemes, isHot }) => {
     setMemes(updatedMemes);
   };
 
-  const filteredMemes = isHot
-    ? memes.filter((meme) => meme.likes > 5)
-    : memes.filter((meme) => meme.likes <= 5);
+  const handleFavoriteToggle = (memeId) => {
+    const memeIndexToUpdate = memes.findIndex((meme) => meme.id === memeId);
+    const updatedMemes = [...memes];
+    updatedMemes[memeIndexToUpdate].favourite =
+      !updatedMemes[memeIndexToUpdate].favourite;
+
+    setMemes(updatedMemes);
+  };
+
+  let filteredMemes = [...memes];
+
+  if (isHot) {
+    filteredMemes = filteredMemes.filter((meme) => meme.likes > 5);
+  } else {
+    filteredMemes = filteredMemes.filter((meme) => meme.likes <= 5);
+  }
+
+  if (isFavourite) {
+    filteredMemes = filteredMemes.filter((meme) => meme.favourite);
+  }
 
   return (
     <div>
@@ -26,9 +43,12 @@ const Memes = ({ memes, setMemes, isHot }) => {
               <p>
                 <NumberComponent
                   likes={meme.likes}
+                  isFavourite={meme.favourite}
                   onLikesChange={(newLikes) =>
                     handleLikesChange(meme.id, newLikes)
                   }
+                  onFavoriteToggle={() => handleFavoriteToggle(meme.id)}
+                  memeId={meme.id} // Pass memeId prop
                 />
               </p>
             </div>

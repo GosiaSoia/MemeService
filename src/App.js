@@ -8,15 +8,23 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
-import HotMemes from "./pages/HotMemes";
-import RegularMemes from "./pages/RegularMemes";
+
 import memesData from "./memesData";
 import GeneratorMeme from "./pages/GeneratorMeme";
-import Favourite from "./pages/Favourite";
+
 import Memes from "./components/Memes";
 
 function App() {
   const [memes, setMemes] = useState(memesData);
+
+  const handleFavoriteToggle = (memeId) => {
+    const memeIndexToUpdate = memes.findIndex((meme) => meme.id === memeId);
+    const updatedMemes = [...memes];
+    updatedMemes[memeIndexToUpdate].favourite =
+      !updatedMemes[memeIndexToUpdate].favourite;
+
+    setMemes(updatedMemes);
+  };
 
   return (
     <div>
@@ -53,19 +61,39 @@ function App() {
               <Route
                 path="/hot"
                 element={
-                  <Memes memes={memes} setMemes={setMemes} isHot={true} />
+                  <Memes
+                    memes={memes}
+                    setMemes={setMemes}
+                    isHot={true}
+                    isFavourite={false}
+                    onFavoriteToggle={handleFavoriteToggle}
+                  />
                 }
               />
               <Route
                 path="/"
                 element={
-                  <Memes memes={memes} setMemes={setMemes} isHot={false} />
+                  <Memes
+                    memes={memes}
+                    setMemes={setMemes}
+                    isHot={false}
+                    isFavourite={false}
+                    onFavoriteToggle={handleFavoriteToggle}
+                  />
                 }
               />
               <Route path="/generator" element={<GeneratorMeme />} />
               <Route
                 path="/favourite"
-                element={<Favourite memes={memes} setMemes={setMemes} />}
+                element={
+                  <Memes
+                    memes={memes}
+                    setMemes={setMemes}
+                    isHot={false}
+                    isFavourite={true}
+                    onFavoriteToggle={handleFavoriteToggle}
+                  />
+                }
               />
             </Routes>
           </section>
