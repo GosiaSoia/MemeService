@@ -16,6 +16,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+}
+
+.italic {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: bold;
 }
 
 /* sidebar */
@@ -47,7 +54,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Kanit", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .sidebar li {
@@ -175,7 +182,7 @@ body {
   align-items: center;
   margin-bottom: 20px;
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   font-style: italic;
 }
 

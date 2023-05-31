@@ -5,6 +5,7 @@ class NumberComponent extends React.Component {
     super(props);
     this.state = {
       myNumber: props.likes,
+      isFavourite: props.isFavourite,
     };
   }
 

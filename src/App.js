@@ -12,6 +12,8 @@ import HotMemes from "./pages/HotMemes";
 import RegularMemes from "./pages/RegularMemes";
 import memesData from "./memesData";
 import GeneratorMeme from "./pages/GeneratorMeme";
+import Favourite from "./pages/Favourite";
+import Memes from "./components/Memes";
 
 function App() {
   const [memes, setMemes] = useState(memesData);
@@ -50,14 +52,21 @@ function App() {
             <Routes>
               <Route
                 path="/hot"
-                element={<HotMemes memes={memes} setMemes={setMemes} />}
+                element={
+                  <Memes memes={memes} setMemes={setMemes} isHot={true} />
+                }
               />
               <Route
                 path="/"
-                element={<RegularMemes memes={memes} setMemes={setMemes} />}
+                element={
+                  <Memes memes={memes} setMemes={setMemes} isHot={false} />
+                }
               />
               <Route path="/generator" element={<GeneratorMeme />} />
-              <Route path="/favourite" element={<GeneratorMeme />} />
+              <Route
+                path="/favourite"
+                element={<Favourite memes={memes} setMemes={setMemes} />}
+              />
             </Routes>
           </section>
         </div>
