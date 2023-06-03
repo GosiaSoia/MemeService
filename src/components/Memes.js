@@ -38,17 +38,15 @@ const Memes = ({ memes, setMemes, isHot, isFavourite }) => {
               <h2>{meme.title}</h2>
               <img src={meme.img} alt={meme.title} />
 
-              <p>
-                <NumberComponent
-                  likes={meme.likes}
-                  isFavourite={meme.favourite}
-                  onLikesChange={(newLikes) =>
-                    handleLikesChange(meme.id, newLikes)
-                  }
-                  onFavoriteToggle={() => handleFavoriteToggle(meme.id)}
-                  memeId={meme.id}
-                />
-              </p>
+              <NumberComponent
+                likes={meme.likes}
+                isFavourite={meme.favourite}
+                onLikesChange={(newLikes) =>
+                  handleLikesChange(meme.id, newLikes)
+                }
+                onFavoriteToggle={() => handleFavoriteToggle(meme.id)}
+                memeId={meme.id}
+              />
             </div>
           </li>
         ))}

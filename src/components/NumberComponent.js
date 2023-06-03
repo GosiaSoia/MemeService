@@ -1,5 +1,6 @@
 import React from "react";
 
+//class component used here is used as part of learning and is intentional
 class NumberComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -9,14 +10,14 @@ class NumberComponent extends React.Component {
     };
   }
 
-  myClick = () => {
+  downVote = () => {
     this.setState((prevState) => ({
       myNumber: prevState.myNumber - 1,
     }));
     this.props.onLikesChange(this.state.myNumber - 1);
   };
 
-  myClick2 = () => {
+  upVote = () => {
     this.setState((prevState) => ({
       myNumber: prevState.myNumber + 1,
     }));
@@ -39,10 +40,10 @@ class NumberComponent extends React.Component {
 
     return (
       <div>
-        <button className="btn" onClick={this.myClick2}>
+        <button className="btn" onClick={this.upVote}>
           Like &#128077;
         </button>
-        <button className="btn" onClick={this.myClick}>
+        <button className="btn" onClick={this.downVote}>
           Dislike &#128078;
         </button>
         <button className="btn-star" onClick={this.starClick}>

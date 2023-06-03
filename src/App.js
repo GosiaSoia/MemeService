@@ -34,22 +34,22 @@ function App() {
           <aside className="sidebar">
             <ul>
               <li>
-                <NavLink exact to="/" activeClassName="active">
+                <NavLink exact="true" to="/" activeclassname="active">
                   REGULAR MEMES
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/hot" activeClassName="active">
+                <NavLink to="/hot" activeclassname="active">
                   HOT MEMES
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/generator" activeClassName="active">
+                <NavLink to="/generator" activeclassname="active">
                   MEME GENERATOR
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/favourite" activeClassName="active">
+                <NavLink to="/favourite" activeclassname="active">
                   FAVOURITE MEMES
                 </NavLink>
               </li>
