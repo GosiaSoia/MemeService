@@ -38,6 +38,7 @@ body {
   flex-direction: column;
   border-radius: 5px;
   border: solid;
+  z-index: 1; /* Add this line */
 }
 
 @media (max-width: 768px) {
@@ -182,7 +183,7 @@ body {
   align-items: center;
   margin-bottom: 20px;
   font-family: "Montserrat", sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   font-style: italic;
 }
 
